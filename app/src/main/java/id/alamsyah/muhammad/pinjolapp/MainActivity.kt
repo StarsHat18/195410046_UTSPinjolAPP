@@ -56,15 +56,16 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        var Biaya_layanan = cost * 5/100
-        var bunga = 3.75/100 * tempo
+        val Biaya_layanan = cost * 5/100
+        val bungaPersentage = 0.0375
+        val totalbunga =  bungaPersentage * cost
 
 
         // Calculate Pinjol
-        var cair = cost - Biaya_layanan
+        val cair = cost - Biaya_layanan
         displayCair(cair)
 
-        var total = cost + bunga
+        val total = cost + totalbunga * tempo
         displayTotal(total)
 
 
