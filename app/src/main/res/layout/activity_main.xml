@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/icon_jumalah_pinjaman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/jumlah_pinjaman"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/jumlah_pinjaman"
+            app:srcCompat="@drawable/ic_money" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/jumlah_pinjaman"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:hint="jumlah pinjaman"
+            app:layout_constraintStart_toEndOf="@+id/icon_jumalah_pinjaman"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/jumlah_pinjaman_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/icon_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/biaya_layanan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/biaya_layanan"
+            app:srcCompat="@drawable/ic_service" />
+
+        <TextView
+            android:id="@+id/biaya_layanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Biaya layanan 5%"
+            app:layout_constraintStart_toStartOf="@id/jumlah_pinjaman"
+            app:layout_constraintTop_toBottomOf="@id/jumlah_pinjaman"/>
+
+        <ImageView
+            android:id="@+id/icon_suku_bunga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/suku_bunga"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/suku_bunga"
+            app:srcCompat="@drawable/ic_offer" />
+        <TextView
+            android:id="@+id/suku_bunga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Suku bunga (3.75% per bulan)"
+            app:layout_constraintStart_toStartOf="@id/biaya_layanan"
+            app:layout_constraintTop_toBottomOf="@id/biaya_layanan"/>
+
+        <ImageView
+            android:id="@+id/icon_jatuh_tempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/jatuh_tempo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/jatuh_tempo"
+            app:srcCompat="@drawable/ic_today" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/jatuh_tempo"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Jatuh Tempo"
+            app:layout_constraintTop_toBottomOf="@id/suku_bunga"
+            app:layout_constraintStart_toStartOf="@id/suku_bunga">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/jatuh_tempo_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/calculate_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="calculate"
+            app:backgroundTint="#FBFF00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/jatuh_tempo"
+            app:layout_constraintTop_toBottomOf="@id/jatuh_tempo" />
+
+        <TextView
+            android:id="@+id/pinjam_bersih"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculate_button"
+            tools:text="Pinjaman bersih : Rp.10" />
+
+        <TextView
+            android:id="@+id/total_tagihan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pinjam_bersih"
+            tools:text="Total Tagihan Yang Harus Dibayar : Rp.10" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+            app:srcCompat="@drawable/download"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_tagihan"
+            android:contentDescription="@string/content_description_media"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

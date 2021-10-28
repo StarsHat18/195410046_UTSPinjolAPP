@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Pinjol APP</string>
+    <string name="simulasi_pinjol">Simulasi Pinjol</string>
+    <string name="jumlah_pinjaman">Jumlah Pinjaman</string>
+    <string name="biaya_layanan">Biaya Layanan 5%</string>
+    <string name="suku_bunga">Suku Bunga ( 3.75%/bln)</string>
+    <string name="jatuh_tempo">Jatuh Tempo</string>
+    <string name="calculate">Calculate</string>
+    <string name="pinjam_bersih">pinjam bersih: %s</string>
+    <string name="pinjaman_bersih">Pinjaman Bersih : %s </string>
+    <string name="total_tagihan">Total Tagihan Yang Harus Dibayar : %S. </string>
+    <string name="tip_amount">pinjam bersih: %s</string>
+    <string name="content_description_media" />
+
+</resources>
